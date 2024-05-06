@@ -42,7 +42,14 @@
         android:name="com.example.proga.CameraFragment"
         android:label="camera"
         tools:layout="@layout/fragment_camera" />
-
-
-
+    <fragment
+        android:id="@+id/MicrifoneFragment"
+        android:name="com.example.proga.MicrifoneFragment"
+        android:label="Micro"
+        tools:layout="@layout/fragment_micrifone" />
+    <fragment
+        android:id="@+id/SensorFragment"
+        android:name="com.example.proga.SensorFragment"
+        android:label="Sensor"
+        tools:layout="@layout/fragment_sensor" />
 </navigation>

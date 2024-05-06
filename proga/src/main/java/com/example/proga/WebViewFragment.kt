@@ -36,10 +36,11 @@ class WebViewFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_web_view, container, false)
-        webView = view.findViewById(R.id.webView)
+        webView = view.findViewById(R.id.webView) ?: WebView(requireContext())
         webView.loadUrl("https://animego.org/")
         return view
     }
+
 
     companion object {
         /**
