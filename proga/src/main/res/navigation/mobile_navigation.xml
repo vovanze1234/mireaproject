@@ -52,4 +52,14 @@
         android:name="com.example.proga.SensorFragment"
         android:label="Sensor"
         tools:layout="@layout/fragment_sensor" />
+    <fragment
+        android:id="@+id/ProfileFragment"
+        android:name="com.example.proga.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_file" />
+    <fragment
+        android:id="@+id/FileFragment"
+        android:name="com.example.proga.FileFragment"
+        android:label="File"
+        tools:layout="@layout/fragment_file" />
 </navigation>
