@@ -2,12 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="false" />
-
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" android:minSdkVersion="30" tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -16,19 +13,20 @@
     <uses-feature android:name="android.hardware.sensor.barometer" android:required="true" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-
-
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- определение местонахождения устройства -->
+    <!-- хранение скаченных карт -->
 
     <application
+        android:requestLegacyExternalStorage="true"
         android:enableOnBackInvokedCallback="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MireaProject">
+        android:theme="@style/Theme.MireaProject"
+        tools:replace="android:allowBackup">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -36,9 +34,11 @@
             android:theme="@style/Theme.MireaProject.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity">
+            <!-- LoginActivity не будет главной активностью, поэтому LAUNCHER категории здесь не нужно -->
         </activity>
     </application>
 

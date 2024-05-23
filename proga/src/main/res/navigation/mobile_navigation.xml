@@ -62,4 +62,19 @@
         android:name="com.example.proga.FileFragment"
         android:label="File"
         tools:layout="@layout/fragment_file" />
+    <fragment
+        android:id="@+id/MapsFragment"
+        android:name="com.example.proga.MapsFragment"
+        android:label="Maps"
+        tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/EstablishmentsFragment"
+        android:name="com.example.proga.EstablishmentsFragment"
+        android:label="Maps"
+        tools:layout="@layout/fragment_establishments" />
+    <fragment
+        android:id="@+id/ExampleFragment"
+        android:name="com.example.proga.ExampleFragment"
+        android:label="Хз"
+        tools:layout="@layout/fragment_example" />
 </navigation>

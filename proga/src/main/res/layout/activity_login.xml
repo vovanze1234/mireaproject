@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/head"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="194dp"
+            android:contentDescription="@string/firebase_user_management"
+            app:srcCompat="@drawable/default_profile_image" />
+
+        <TextView
+            android:text="@string/emailpassword_title_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/titleTextView"
+            android:textAlignment="center"
+            android:textColor="#4A4650"
+            android:textColorHint="#4A4650" />
+
+        <TextView
+            android:text="@string/signed_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/statusTextView"
+            android:textAlignment="center"
+            android:textColor="#242327"
+            android:textColorHint="#242327" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/detailTextView"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/frameLayout"
+        android:background="#CAC8CB"
+        android:paddingVertical="75dp"
+        android:paddingHorizontal="16dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/signedInSection"
+            android:weightSum="2"
+            android:baselineAligned="false"
+            android:visibility="visible">
+
+            <Button
+                android:id="@+id/signOutButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="1"
+                android:text="@string/sign_out" />
+
+            <Button
+                android:text="@string/verify_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:id="@+id/verifyEmailButton"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:id="@+id/signInSection"
+            android:baselineAligned="false"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_weight="1"
+                android:id="@+id/column1">
+
+                <EditText
+                    android:id="@+id/emailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="email"
+                    android:inputType="textEmailAddress" />
+
+                <Button
+                    android:id="@+id/signInButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/sign_in"
+                    android:layout_marginHorizontal="5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_weight="1"
+                android:id="@+id/column2">
+
+                <EditText
+                    android:id="@+id/passwordEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:hint="password"
+                    android:inputType="textPassword" />
+
+                <Button
+                    android:id="@+id/createAccountButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/create_account"
+                    android:layout_marginHorizontal="5dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

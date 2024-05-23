@@ -19,7 +19,8 @@
 
         private lateinit var imageView1: ImageView
         private lateinit var imageView2: ImageView
-        private lateinit var imageViewWide: ImageView
+        private lateinit var imageView3: ImageView
+        private lateinit var imageView4: ImageView
         private var selectedView: ImageView? = null
         private var isWork = false
 
@@ -30,7 +31,8 @@
             val view = inflater.inflate(R.layout.fragment_camera, container, false)
             imageView1 = view.findViewById(R.id.imageView1)
             imageView2 = view.findViewById(R.id.imageView2)
-            imageViewWide = view.findViewById(R.id.imageViewWide)
+            imageView3 = view.findViewById(R.id.imageView3)
+            imageView4 = view.findViewById(R.id.imageView4)
 
             val cameraPermissionStatus = ContextCompat.checkSelfPermission(
                 requireContext(),
@@ -64,8 +66,12 @@
                 dispatchTakePictureIntent()
             }
 
-            imageViewWide.setOnClickListener {
-                selectedView = imageViewWide
+            imageView3.setOnClickListener {
+                selectedView = imageView3
+                dispatchTakePictureIntent()
+            }
+            imageView4.setOnClickListener {
+                selectedView = imageView4
                 dispatchTakePictureIntent()
             }
 

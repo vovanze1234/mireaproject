@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnConvert"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddRecord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Конвертировать из JPEG в PNG"
-        android:layout_centerInParent="true" />
+        android:layout_gravity="end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/save"
+        android:src="@android:drawable/ic_menu_save"
+        app:backgroundTint="#FFFFFF"
+        />
 
-    <ImageView
-        android:id="@+id/imageResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnConvert"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true" />
-
-</RelativeLayout>
+</LinearLayout>

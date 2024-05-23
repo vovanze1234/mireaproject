@@ -48,5 +48,17 @@
             android:id="@+id/FileFragment"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Файл" />
+        <item
+            android:id="@+id/MapsFragment"
+            android:icon="@android:drawable/ic_dialog_map"
+            android:title="Карты" />
+        <item
+            android:id="@+id/EstablishmentsFragment"
+            android:icon="@android:drawable/ic_dialog_map"
+            android:title="Карты2" />
+        <item
+            android:id="@+id/ExampleFragment"
+            android:icon="@android:drawable/ic_dialog_map"
+            android:title="Хз" />
     </group>
 </menu>

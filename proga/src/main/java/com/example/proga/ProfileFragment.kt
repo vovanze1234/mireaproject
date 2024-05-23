@@ -19,7 +19,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ProfileFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class   ProfileFragment : Fragment() {
+class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
@@ -38,10 +38,10 @@ class   ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Инициализируем SharedPreferences
         sharedPreferences = requireActivity().getSharedPreferences("profile_prefs", Context.MODE_PRIVATE)
 
-        // Пример сохранения данных в SharedPreferences
+        loadSavedData()
+
         binding.btnSave.setOnClickListener {
             val name = binding.etName.text.toString()
             val age = binding.etAge.text.toString().toInt()
@@ -51,14 +51,32 @@ class   ProfileFragment : Fragment() {
                 putInt("age", age)
                 apply()
             }
-        }
 
-        // Пример чтения данных из SharedPreferences и заполнение полей
+            showSavedData(name, age)
+        }
+    }
+
+    private fun loadSavedData() {
         val savedName = sharedPreferences.getString("name", "")
         val savedAge = sharedPreferences.getInt("age", 0)
 
         binding.etName.setText(savedName)
         binding.etAge.setText(savedAge.toString())
+
+        if (savedName?.isNotEmpty() == true && savedAge > 0) {
+            showSavedData(savedName, savedAge)
+        }
+    }
+
+    private fun showSavedData(name: String, age: Int) {
+        binding.tvSavedName.apply {
+            visibility = View.VISIBLE
+            text = "Сохранённое имя: $name"
+        }
+        binding.tvSavedAge.apply {
+            visibility = View.VISIBLE
+            text = "Сохранённый возраст: $age"
+        }
     }
 
     override fun onDestroyView() {
